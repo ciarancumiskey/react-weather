@@ -16,16 +16,20 @@ export default function App() {
                 setLat(position.coords.latitude);
                 setLon(position.coords.longitude);
             });
-            await fetch(`http://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`, {
+            await fetch(`https://cors-anywhere.herokuapp.com/${REACT_APP_API_URL}/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${REACT_APP_API_KEY}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }})
-            .then(res => res.json())
-            .then(result => {
-                setData(result)
-                console.log(result);
-            });
+                }
+            })
+                .then(res => res.json())
+                .then(result => {
+                    setData(result)
+                    console.log(result);
+                })
+                .catch(error => {
+                    console.log("Error while loading from OWM's API: " + error);
+                });
         }
         fetchData();
     }, [lat, lon])
