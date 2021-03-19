@@ -28,6 +28,19 @@
     font-size: 18px;
 }
 
+.sunrise-sunset {
+    padding: 15px;
+    font-family: 'Recursive', sans-serif;
+    font-size: 16px;
+}
+
+.description {
+    padding: 15px;
+    font-family: 'Recursive', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
 .flex {
     display: flex;
     justify-content: space-between;
