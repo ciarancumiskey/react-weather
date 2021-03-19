@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-//import Weather from './components/weather';
-
+import Weather from './components/Weather';
+//Get the .env variables
 const { REACT_APP_API_KEY, REACT_APP_API_URL } = process.env;
-console.log("URL: " + REACT_APP_API_URL);
+
 export default function App() {
     //Create states with associated functions for location
     const [lat, setLat] = useState([]);
@@ -21,21 +21,23 @@ export default function App() {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
-            })
-                .then(res => res.json())
-                .then(result => {
+            }).then(res => res.json())
+            .then(result => {
                     setData(result)
                     console.log(result);
-                })
-                .catch(error => {
+            })
+            .catch(error => {
                     console.log("Error while loading from OWM's API: " + error);
-                });
+            });
         }
         fetchData();
     }, [lat, lon])
     return (
         <div className="App">
-              
+            {(typeof data.main != 'undefined') ?
+                (<Weather weatherData={data} />) :
+                (<div></div>)
+            }
         </div>
     );
 }
