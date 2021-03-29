@@ -35,7 +35,10 @@ export default function App() {
     }, [lat, lon])
     return (
         <div className="App">
-            {(typeof data.main != 'undefined') ?
+            {
+                /** Check if the weather data has been fetched yet,
+                 *  if not, show a loading screen. */
+                (typeof data.main != 'undefined') ?
                 (<Weather weatherData={data} />) :
                 (<div>
                     <Dimmer active>
