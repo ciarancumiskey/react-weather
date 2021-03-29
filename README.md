@@ -1,3 +1,9 @@
+# Setup:
+
+### Open https://cors-anywhere.herokuapp.com/corsdemo in your browser so you won't get blocked by OpenWeatherMap's API.
+### Navigate to the root folder of this app in Command Prompt (or your OS's equivalent) and run `npm start`.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
