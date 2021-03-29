@@ -6,10 +6,21 @@
     background-color: paleturquoise;
 }
 
-.header {
+.top {
+    height: 60px;
     background-color: dimgrey;
     color: whitesmoke;
     padding: 10px;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Recursive', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    background-color: dimgrey;
+    color: whitesmoke;
+    margin: 10px 0px 0px 10px;
     font-size: 28px;
     border-radius: 15px;
     font-family: 'Recursive', sans-serif;
@@ -44,4 +55,9 @@
 .flex {
     display: flex;
     justify-content: space-between;
+}
+
+.button {
+    width: 35px;
+    height: 35px;
 }
