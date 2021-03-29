@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
 import Weather from './components/Weather';
+import { Dimmer, Loader } from 'semantic-ui-react';
 //Get the .env variables
 const { REACT_APP_API_KEY, REACT_APP_API_URL } = process.env;
 
@@ -36,7 +37,11 @@ export default function App() {
         <div className="App">
             {(typeof data.main != 'undefined') ?
                 (<Weather weatherData={data} />) :
-                (<div></div>)
+                (<div>
+                    <Dimmer active>
+                        <Loader>Loading...</Loader>
+                    </Dimmer>
+                </div>)
             }
         </div>
     );
